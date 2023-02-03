@@ -10,23 +10,34 @@ body {
   align-content: f;
 }
 
-header {border: 10px solid #c1c1f1;
+header {
+  margin: 0;
+  background-color: darkgray;
   grid-area: header;
 }
-.portada{
+
+.portada {
   margin: 0;
   width: 100%;
   height: 300px;
 }
-nav ul li {
-  display: flexbox;
+
+h1 {
+  text-align: center;
+  color: sienna;
+}
+
+.descripcion {
+  font-size: 30px;
 }
 
 aside {
+  text-align: center;
+  font-size: large;
   grid-area: aside;
   border: 1px black solid;
-  width: 290px;
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   background-color: aqua;
   margin: 0px;
   padding: 10px;
@@ -34,16 +45,23 @@ aside {
 
 .primero {
   width: auto;
-  margin: 2px;
-  border: 10px solid #000055;
+  margin: 5px;
   grid-area: primero;
 }
 
 .segundo {
   width: auto;
   margin: 2px;
-  border: 10px solid #555500;
   grid-area: segundo;
+}
+.tercero {
+  width: auto;
+  margin: 0px 10px 0px 0px;
+  grid-area: tercero;
+}
+.pheader{
+  text-align: center;
+
 }
 .art {
   margin: 0;
@@ -53,10 +71,16 @@ aside {
   border: 1px black solid;
   grid-area: img;
 }
-.art:hover{
+
+.foto {
+  margin: 10px;
+  border: 2px solid #444;
+}
+
+.art:hover {
   height: 250px;
   transition-duration: 1s;
-} 
+}
 
 footer {
   grid-area: footer;
@@ -68,45 +92,63 @@ footer {
   background-color: coral;
   color: aliceblue;
 }
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  /*elimina el subrrallado*/
+  text-transform: uppercase;
+  /*coloca en MAYUSCULA*/
+}
+.redes{
+  height: 30px;
+  text-align: center;
+  text-transform: none;
+}
 
 .gridPadre {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 300px 1fr  1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "header header header" 
-    "aside primero segundo"
-    "aside primero segundo"
-    "aside primero segundo"
-    "footer footer footer";
+    "header header header header"
+    "aside primero segundo tercero"
+    "aside primero segundo tercero"
+    "aside primero segundo tercero"
+    "footer footer footer footer";
 }
 
 @media (max-width: 768px) {
-  .gridPadre{
+  .gridPadre {
+    margin: 0;
     display: grid;
     grid-template-areas:
-    "header header"
-    "aside primero"
-    "aside primero"
-    "aside segundo"
-    "aside segundo"
-    "footer footer"
+      "header header"
+      "aside primero"
+      "aside primero"
+      "aside segundo"
+      "aside segundo"
+      "footer footer"
     ;
   }
 }
+
 @media (max-width: 600px) {
-  .gridPadre{
+  .gridPadre {
     display: grid;
     grid-template-areas:
-    "header"
-    "aside"
-    "primero"
-    "segundo"
-    "footer"
+      "header"
+      "aside"
+      "primero"
+      "segundo"
+      "tercero"
+      "footer"
     ;
   }
-  aside{
-    display: none ;
+
+  aside {
+    display: none;
   }
 }
 
@@ -156,15 +198,11 @@ a {
   height: 100px;
   text-decoration: none;
   /*elimina el subrrallado*/
-  /* text-transform: uppercase; */
-  /*coloca en MAYUSCULA*/
+/* text-transform: uppercase; */
+/*coloca en MAYUSCULA*/
 /* }
 
 li {
   list-style-type: none;
 }
 */
-
-
-
-
